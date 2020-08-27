@@ -1,0 +1,86 @@
+<div class="login-box">
+
+  <img src="../../assets/avatar.png" alt="Italian Trulli" class="logo">
+
+  <div class="row">
+       <form [formGroup]="myform" 
+            novalidate="novalidate"
+            (ngSubmit)="onSubmit(myform)">
+
+          <div class="form-group col-xs-12"
+               [ngClass]="{
+                  'has-success' : name.valid && (name.dirty || name.touched),
+                  'has-error' : name.invalid && (name.dirty || name.touched)
+                  }">
+                         
+              <input type="text"
+                     class="form-control"
+                     formControlName="name"
+
+                     (ngModelChange)="onInputChange()" 
+                     
+                     placeholder="Kullanıcı Adı"
+                     
+                     id="username"
+                     >
+                    
+                         
+                     <div class="form-control-feedback fixed"
+                      *ngIf="name.errors && (name.dirty || name.touched)">
+                       
+                      <span *ngIf="name.errors.required">Kullanıcı adı gereklidir!</span>
+                      <span *ngIf="name.errors.minlength">En az 5 karakter girilmelidir!</span>
+
+                     </div>
+
+                     
+          </div>
+
+          <div class="form-group col-xs-12"    
+              [ngClass]="{
+                  'has-success' : pswr.valid && (pswr.dirty || pswr.touched),
+                  'has-error' : pswr.invalid && (pswr.dirty || pswr.touched)
+                  }">
+             
+              <input type="password"
+                     class="form-control"
+                     formControlName="pswr"
+                     (ngModelChange)="onInputChange()" 
+                     
+                     placeholder="******"
+                    
+
+                     
+                     id="password"
+                     
+                     >
+
+                     <div class="form-control-feedback fixed"
+                     *ngIf="pswr.errors && (pswr.dirty || pswr.touched)">
+                      
+                     <span *ngIf="pswr.errors.required">Parola gereklidir!</span>
+
+                    </div>
+
+                     
+          </div>
+
+          <div class="form-group col-xs-12">
+              <button class="btn btn-primary col-xs-12"
+                      type="submit">
+                  Giriş
+              </button>
+              <a class="navbar brand" href ng-click="">Şifremi Unuttum</a>
+          </div>
+
+
+      </form>
+
+    
+
+      <div class="fade-element-in alert alert-danger col-xs-12" *ngIf="showMe">
+          Geçersiz Kullanıcı bilgisi !
+      </div>
+  </div>
+
+</div>

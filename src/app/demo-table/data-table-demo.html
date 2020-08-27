@@ -1,0 +1,40 @@
+<!-- <button (click)="myBTN()">myBTN</button> -->
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+    <data-table id="persons-grid"
+        headerTitle="PERSONEL LİSTESİ"
+        [items]="items"
+        [itemCount]="itemCount"
+        (reload)="reloadItems($event)"
+
+        (rowClick)="rowClick($event)"
+        (rowDoubleClick)="rowDoubleClick($event)"
+        [rowTooltip]="rowTooltip"
+        >
+        <data-table-column
+            [property]="'status'"
+            [header]="'DURUMU'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'code'"
+            [header]="'KODU'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'name'"
+            [header]="'ADI'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'surname'"
+            [header]="'SOYADI'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        
+        
+    </data-table>
+</div>

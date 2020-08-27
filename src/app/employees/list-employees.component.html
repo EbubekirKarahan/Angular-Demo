@@ -1,0 +1,9 @@
+<div class="col-xs-12" *ngIf="hata">
+  Yüklenemedi !
+</div>
+
+<div class="col-xs-12" *ngIf="!ready">
+  Yükleniyor..
+</div>
+
+<data-table-demo *ngIf="loaded" [personels]="person_data" ngModel="person_data"></data-table-demo>

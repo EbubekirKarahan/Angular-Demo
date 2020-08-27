@@ -1,4 +1,10 @@
-# JRETAIL
+# ANGULARDEMO
+# EbubekirKarahan 26.08.2020
+Projeyi yüklemek ve ardından başlatmak için aşağıdaki komutları
+proje dizini altında çalıştırınız.
+1) >> npm install
+2) >> ng serve -o
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
